@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Screening App</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-inter min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="w-full py-5 px-8 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">Resume<span class="text-blue-500">Screen</span></h1>
+        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-xl text-sm">GitHub</button>
+    </nav>
+
+    <!-- Main Container -->
+    <section class="max-w-3xl mx-auto mt-16 p-6">
+
+        <div class="bg-gray-800/60 backdrop-blur-xl shadow-xl border border-gray-700 rounded-3xl p-8">
+
+            <h2 class="text-3xl font-bold mb-4 text-blue-400">AI Resume Screening</h2>
+            <p class="text-gray-300 mb-6">
+                Paste your resume text and let the model classify whether it's <span class="font-semibold">Fit / Not Fit</span>.
+            </p>
+
+            <!-- Textarea -->
+            <textarea
+                id="resumeInput"
+                class="w-full h-48 p-4 rounded-2xl bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-500 outline-none transition"
+                placeholder="Paste resume content here..."
+            ></textarea>
+
+            <!-- Submit Button -->
+            <button
+                onclick="analyzeResume()"
+                class="w-full mt-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 transition text-lg font-semibold"
+            >
+                Analyze Resume
+            </button>
+
+            <!-- Result -->
+            <div id="resultBox" class="hidden mt-8 p-6 rounded-2xl bg-gray-900 border border-gray-700">
+                <h3 class="text-xl font-semibold mb-2">Result:</h3>
+                <p id="resultText" class="text-gray-300"></p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
